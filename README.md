@@ -61,7 +61,8 @@ Nicole-Marcial-DeepLearning-ITAI2376/
 ├── FinalProject-CookieRecipeAgent/
 │   ├── README.md
 │   ├── REQUIREMENTS.md
-│   └── DATA_ACCESS.md
+│   ├── DATA_ACCESS.md
+│   └── Final_Agent_Nicole_Marcial_ITAI2376.ipynb
 ├── Labs/
 │   ├── L02-NeuralNetworkFoundations/
 │   │   ├── README.md
