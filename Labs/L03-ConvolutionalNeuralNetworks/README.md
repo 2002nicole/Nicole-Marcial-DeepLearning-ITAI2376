@@ -169,7 +169,11 @@ Adam learning rate: 0.0001
 ```
 
 ## Results and Evaluation
+The notebook ran successfully from top to bottom, and both the custom CNN and MobileNetV2 transfer learning model trained and evaluated successfully. The strongest model was MobileNetV2, which reached 100% accuracy on the small 4-image test set.
 
+For the student challenge, I completed the fine-tuning workflow by unfreezing the MobileNetV2 base model, freezing earlier layers, keeping the last 30 layers trainable, recompiling with a lower learning rate, and training for 5 additional epochs.
+
+Although the fine-tuned model also reached 100% test accuracy, the test loss increased slightly from 0.0021 to 0.0062. This showed that accuracy alone was not enough to evaluate the model, especially with such a small test set.
 ### Custom CNN Results
 
 The custom CNN trained successfully, but it did not perform well on the small test set.
@@ -236,6 +240,10 @@ Key takeaways:
 - MobileNetV2 performed much better than a custom CNN trained from scratch.
 - Very small test sets can make results look stronger than they really are.
 - Fine-tuning is not always useful if the transfer learning model is already performing well.
+
+This lab also helped me understand transfer learning more clearly. The frozen MobileNetV2 layers reused general image patterns such as edges, curves, colors, and textures that had already been learned from a much larger dataset. Because of that, the model did not need to learn visual features from scratch. It only needed to adjust the final classification layers for the specific puppy-versus-bagel task.
+
+I also learned why some images are harder for a CNN to classify. Puppies and bagels can share similar round shapes, tan colors, and textured surfaces. These similarities can activate similar convolutional filters and feature maps, which may confuse the model when the dataset is very small.
 
 ## Notes About Authorship
 
